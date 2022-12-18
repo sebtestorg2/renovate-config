@@ -17,7 +17,7 @@
     },
     {
       "fileMatch": ["(^|/|\\.)Dockerfile$", "(^|/)Dockerfile[^/]*$"],
-      "matchStrings": ["https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s (?<currentValue.*?);"],
+      "matchStrings": ["https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s (?<currentValue>.*?);"],
       "depNametemplate": "golangci/golangci-lint",
       "datasourceTemplate": "github-releases"
     },

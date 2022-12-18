@@ -17,6 +17,12 @@
     },
     {
       "fileMatch": ["(^|/|\\.)Dockerfile$", "(^|/)Dockerfile[^/]*$"],
+      "matchStrings": [".*?https:\/\/raw.githubusercontent.com\/golangci\/golangci-lint\/master\/install.sh.*?sh -s (?<currentValue>.*?);"],
+      "depNameTemplate": "golangci/golangci-lint",
+      "datasourceTemplate": "github-releases"
+    },
+    {
+      "fileMatch": ["(^|/|\\.)Dockerfile$", "(^|/)Dockerfile[^/]*$"],
       "matchStrings": ["ENV CATTLE_MACHINE_VERSION (?<currentValue>.*?)\\n"],
       "depNameTemplate": "rancher/machine",
       "datasourceTemplate": "github-releases"

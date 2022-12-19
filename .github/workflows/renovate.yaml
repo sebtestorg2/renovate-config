@@ -9,8 +9,8 @@ on:
       overrideSchedule:
         description: "Override all schedules"
         required: false
-        default: false
-        type: boolean
+        default: "false"
+        type: string
 jobs:
   renovate:
     runs-on: ubuntu-latest

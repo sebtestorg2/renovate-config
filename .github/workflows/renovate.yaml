@@ -23,9 +23,9 @@ jobs:
         id: get_token
         uses: tibdex/github-app-token@021a2405c7f990db57f5eae5397423dcc554159c # tag=v1.7.0
         with:
-          app_id: ${{ secrets.APP_ID }}
-          installation_id: ${{ secrets.INSTALL_ID }}
-          private_key: ${{ secrets.PRIVATE_KEY }}
+          app_id: ${{ secrets.SEB_RENOVATE_APP_ID }}
+          installation_id: ${{ secrets.SEB_RENOVATE_INSTALL_ID }}
+          private_key: ${{ secrets.SEB_RENOVATE_PRIVATE_KEY }}
       - name: Self-hosted Renovate
         uses: renovatebot/github-action@f25e0646e498d67dab9f3ca2a2a4455b91a7c2be # v34.63.0
         env:

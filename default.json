@@ -86,6 +86,12 @@
       "schedule": ["every weekend after 4am"]
     },
     {
+      "matchPackagePatterns": ["golangci/golangci-lint"],
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "automerge": true,
+      "schedule": ["every weekend after 4am"]
+    },
+    {
       "matchManagers": ["droneci"],
       "matchPackagePatterns": ["plugins/"],
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],

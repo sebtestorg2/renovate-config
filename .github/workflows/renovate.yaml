@@ -11,13 +11,6 @@ on:
         required: false
         default: "false"
         type: string
-    secrets:
-      SEB_RENOVATE_APP_ID:
-        required: true
-      SEB_RENOVATE_INSTALL_ID:
-        required: true
-      SEB_RENOVATE_PRIVATE_KEY:
-        required: true
 jobs:
   renovate:
     runs-on: ubuntu-latest

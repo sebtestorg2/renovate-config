@@ -23,6 +23,7 @@ on:
         required: false
         default: "false"
         type: string
+name: Renovate
 jobs:
   renovate:
     runs-on: ubuntu-latest

@@ -11,6 +11,7 @@ on:
         required: false
         default: "false"
         type: string
+concurrency: renovate
 jobs:
   renovate:
     runs-on: ubuntu-latest

@@ -59,6 +59,11 @@
       "allowedVersions": "<1.25.0"
     },
     {
+      "matchDatasources": ["docker"],
+      "matchPackageNames": ["rancher/k3s"],
+      "versioning": "loose"
+    },
+    {
       "matchPackagePatterns": ["kustomize"],
       "extractVersion": "^kustomize\/(?<version>.*)$",
       "groupName": "kustomize"

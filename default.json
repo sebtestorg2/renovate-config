@@ -115,6 +115,10 @@
       "matchDepNames": ["kubernetes/kubernetes"],
       "matchUpdateTypes": ["major", "minor"],
       "enabled": false
+    },
+    {
+      "matchDepNames": ["kubernetes/kubernetes"],
+      "separateMinorPatch": true
     }
   ]
 }

@@ -35,6 +35,12 @@
     },
     {
       "fileMatch": ["(^|/|\\.)Dockerfile$", "(^|/)Dockerfile[^/]*$"],
+      "matchStrings": ["ENV KUBECTL_VERSION (?<currentValue>.*?)\\n"],
+      "depNameTemplate": "kubernetes/kubernetes",
+      "datasourceTemplate": "github-releases"
+    },
+    {
+      "fileMatch": ["(^|/|\\.)Dockerfile$", "(^|/)Dockerfile[^/]*$"],
       "matchStrings": ["ENV CATTLE_CLI_VERSION (?<currentValue>.*?)\\n"],
       "depNameTemplate": "rancher/cli",
       "datasourceTemplate": "github-releases"
@@ -104,6 +110,11 @@
       "automerge": true,
       "pinDigests": true,
       "schedule": ["every weekend after 4am"]
+    },
+    {
+      "matchDepNames": ["kubernetes/kubernetes"],
+      "matchUpdateTypes": ["major", "minor"],
+      "enabled": false
     }
   ]
 }

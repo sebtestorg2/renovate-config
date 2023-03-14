@@ -35,7 +35,7 @@
     },
     {
       "fileMatch": ["(^|/|\\.)Dockerfile$", "(^|/)Dockerfile[^/]*$", "^.drone.yml$"],
-      "matchStrings": ["TRIVY_VERSION(\\=|\\s|:\\s)(?<currentValue>.*?)\\n"],
+      "matchStrings": ["TRIVY_VERSION(\\=|\\s|\\:\\s)(\\"|)(?<currentValue>.*?)(\\"|)\\n"],
       "depNameTemplate": "aquasecurity/trivy",
       "datasourceTemplate": "github-releases"
     },

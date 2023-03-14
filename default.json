@@ -34,6 +34,12 @@
       "datasourceTemplate": "github-releases"
     },
     {
+      "fileMatch": ["(^|/|\\.)Dockerfile$", "(^|/)Dockerfile[^/]*$", "^.drone.yml$"],
+      "matchStrings": ["TRIVY_VERSION(\\=|\\s|:\\s)(?<currentValue>.*?)\\n"],
+      "depNameTemplate": "aquasecurity/trivy",
+      "datasourceTemplate": "github-releases"
+    },
+    {
       "fileMatch": ["(^|/|\\.)Dockerfile$", "(^|/)Dockerfile[^/]*$"],
       "matchStrings": ["ENV KUBECTL_VERSION (?<currentValue>.*?)\\n"],
       "depNameTemplate": "kubernetes/kubernetes",

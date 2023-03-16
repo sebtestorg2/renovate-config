@@ -4,6 +4,12 @@
   "automergeStrategy": "merge-commit",
   "regexManagers": [
     {
+      "fileMatch": ["\\.github/workflows/renovate.yml"],
+      "matchStrings": ["RENOVATE_VERSION\\:\\s(?<currentValue>.*?)\\n"],
+      "depNameTemplate": "renovate/renovate",
+      "datasourceTemplate": "docker"
+    },
+    {
       "fileMatch": ["(^|/|\\.)Dockerfile$", "(^|/)Dockerfile[^/]*$"],
       "matchStrings": ["ENV CATTLE_K3S_VERSION (?<currentValue>.*?)\\n"],
       "depNameTemplate": "k3s-io/k3s",
@@ -78,6 +84,10 @@
     {
       "matchPackagePatterns": ["rancher/ui"],
       "extractVersion": "v(?<version>.*)$"
+    },
+    {
+      "matchPackagePatterns": ["renovate/renovate"],
+      "extractVersion": "(?<version>.*)-slim$"
     },
     {
       "matchPackagePatterns": ["rancher/ui", "rancher/dashboard"],

@@ -18,19 +18,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@755da8c3cf115ac066823e79a1e1788f8940201b # v3.2.0
+        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
       - name: Validate Renovate JSON
         run: jq type .github/renovate.json
       - name: Get token
         id: get_token
-        uses: tibdex/github-app-token@021a2405c7f990db57f5eae5397423dcc554159c # tag=v1.7.0
+        uses: tibdex/github-app-token@b62528385c34dbc9f38e5f4225ac829252d1ea92 # v1.8.0
         with:
           app_id: ${{ secrets.SEB_RENOVATE_APP_ID }}
           installation_id: ${{ secrets.SEB_RENOVATE_INSTALL_ID }}
           private_key: ${{ secrets.SEB_RENOVATE_PRIVATE_KEY }}
       - name: Self-hosted Renovate
-        uses: renovatebot/github-action@b0b629aa1d1bffb348fbe0e67ac2fad818d0f384 # v34.78.0
+        uses: renovatebot/github-action@2529763aa12e6d5b445bc911e8bd8cce2a4f205c # v36.0.1
         env:
+          RENOVATE_VERSION: 35.10.0
           # Repository taken from variable to keep configuration file generic
           RENOVATE_REPOSITORIES: ${{ github.repository }}
           # Onboarding not needed for self hosted
@@ -45,5 +46,6 @@ jobs:
           RENOVATE_FORCE: ${{ github.event.inputs.overrideSchedule == 'true' && '{''schedule'':null}' || '' }}
           LOG_LEVEL: ${{ inputs.logLevel || 'info' }}
         with:
+          renovate-version: ${{ env.RENOVATE_VERSION }}
           configurationFile: .github/renovate.json
           token: '${{ steps.get_token.outputs.token }}'

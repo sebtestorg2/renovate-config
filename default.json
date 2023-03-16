@@ -4,7 +4,7 @@
   "automergeStrategy": "merge-commit",
   "regexManagers": [
     {
-      "fileMatch": ["\\.github/workflows/renovate.yml"],
+      "fileMatch": ["\\.github/workflows/renovate.yaml"],
       "matchStrings": [".*?RENOVATE_VERSION:\\s(?<currentValue>.*?)\\n"],
       "depNameTemplate": "renovate/renovate",
       "datasourceTemplate": "docker"

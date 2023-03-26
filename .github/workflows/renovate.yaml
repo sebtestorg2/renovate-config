@@ -32,7 +32,7 @@ jobs:
       - name: Self-hosted Renovate
         uses: renovatebot/github-action@2529763aa12e6d5b445bc911e8bd8cce2a4f205c # v36.0.1
         env:
-          RENOVATE_VERSION: 35.8.1
+          RENOVATE_VERSION: "35.8.1"
           # Repository taken from variable to keep configuration file generic
           RENOVATE_REPOSITORIES: ${{ github.repository }}
           # Onboarding not needed for self hosted

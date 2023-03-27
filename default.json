@@ -5,7 +5,7 @@
   "regexManagers": [
     {
       "fileMatch": ["\\.github/workflows/renovate.yaml"],
-      "matchStrings": ["RENOVATE_VERSION:\\s\\\"(?<currentValue>.*?)\\\"\\n"],
+      "matchStrings": [".*?RENOVATE_VERSION:\\s\\\"(?<currentValue>.*?)\\\"\\n"],
       "depNameTemplate": "renovate/renovate",
       "datasourceTemplate": "docker"
     },

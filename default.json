@@ -92,7 +92,14 @@
     {
       "matchPackagePatterns": ["rancher/ui", "rancher/dashboard"],
       "allowedVersions": "<2.8.0",
-      "groupName": "ui-dashboard-envs"
+      "groupName": "ui-dashboard-envs",
+      "ignoreUnstable": false
+    },
+    {
+      "matchPackagePatterns": ["rancher/cli"],
+      "matchBaseBranches": ["release/v2.7"],
+      "allowedVersions": "<2.8.0",
+      "ignoreUnstable": false
     },
     {
       "matchManagers": ["dockerfile", "helm-values"],

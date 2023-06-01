@@ -13,6 +13,11 @@ on:
         required: false
         default: "false"
         type: string
+      configFile:
+        description: "Configuration file to use"
+        required: false
+        default: ".github/renovate.json"
+        type: string
 concurrency: renovate
 jobs:
   renovate:
@@ -48,5 +53,5 @@ jobs:
           LOG_LEVEL: ${{ inputs.logLevel || 'info' }}
         with:
           renovate-version: ${{ env.RENOVATE_VERSION }}
-          configurationFile: .github/renovate.json
+          configurationFile: ${{ inputs.configFile || '.github/renovate.json' }}
           token: '${{ steps.get_token.outputs.token }}'

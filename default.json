@@ -56,18 +56,6 @@
       "matchStrings": ["ENV CATTLE_CLI_VERSION (?<currentValue>.*?)\\n"],
       "depNameTemplate": "rancher/cli",
       "datasourceTemplate": "github-releases"
-    },
-    {
-      "fileMatch": ["(^|/|\\.)Dockerfile$", "(^|/)Dockerfile[^/]*$"],
-      "matchStrings": ["ENV CATTLE_UI_VERSION (?<currentValue>.*?)\\n"],
-      "depNameTemplate": "rancher/ui",
-      "datasourceTemplate": "github-releases"
-    },
-    {
-      "fileMatch": ["(^|/|\\.)Dockerfile$", "(^|/)Dockerfile[^/]*$"],
-      "matchStrings": ["ENV CATTLE_DASHBOARD_UI_VERSION (?<currentValue>.*?)\\n"],
-      "depNameTemplate": "rancher/dashboard",
-      "datasourceTemplate": "github-releases"
     }
   ],
   "packageRules": [
@@ -82,18 +70,8 @@
       "groupName": "kustomize"
     },
     {
-      "matchPackagePatterns": ["rancher/ui"],
-      "extractVersion": "v(?<version>.*)$"
-    },
-    {
       "matchPackagePatterns": ["renovate/renovate"],
       "extractVersion": "(?<version>.*)-slim$"
-    },
-    {
-      "matchPackagePatterns": ["rancher/ui", "rancher/dashboard"],
-      "allowedVersions": "<2.8.0",
-      "groupName": "ui-dashboard-envs",
-      "ignoreUnstable": false
     },
     {
       "matchPackagePatterns": ["rancher/cli"],
